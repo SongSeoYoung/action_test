@@ -11,5 +11,7 @@ import UIKit
 
 @main
 final class AppDelegate: UIControl, UIApplicationDelegate {
-    
+    func a() {
+        print("a")
+    }
 }
