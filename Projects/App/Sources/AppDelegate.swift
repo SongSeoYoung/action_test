@@ -17,4 +17,7 @@ final class AppDelegate: UIControl, UIApplicationDelegate {
     func b() {
         print("b")
     }
+    func c() {
+        print("b")
+    }
 }
