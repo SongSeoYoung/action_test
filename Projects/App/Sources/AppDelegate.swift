@@ -20,4 +20,7 @@ final class AppDelegate: UIControl, UIApplicationDelegate {
     func c() {
         print("b")
     }
+    func d() {
+        print("b")
+    }
 }
