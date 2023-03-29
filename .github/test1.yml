@@ -9,11 +9,15 @@ on:
 
 jobs:
   build:
-    name: Build
     runs-on: macos-latest
     steps:
+      - name: Test
       - uses: actions/checkout@v3
-      - uses: tuist/tuist-action@0.13.0
-        with:
-          command: 'build'
-          arguments: ''
+      - name: Install Tuist
+      	run: curl -Ls https://install.tuist.io | bash
+	  - name: Fetch Swift Packages
+        run: tuist fetch
+	  - name: Generate Project
+		run: tuist generate
+      - name: Build and Test
+        run:  xcodebuild clean test -workspace ActionWorkspace.xcworkspace -scheme ActionWorkspace-Workspace -destination 'platform=iOS Simulator,name=iPhone 13 Pro,OS=latest' build test
